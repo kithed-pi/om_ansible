@@ -14,6 +14,13 @@
         group=root 
         mode="u=rw,g=r,o=r"
       when: vms
+    - name: "Moving SSL certificates"
+      copy: 
+        src="files/ssl"
+        dest="/etc/security/ssl"
+        owner=root 
+        group=root 
+        mode="u=r"
 
 - name: Installing Ops Manager
   hosts: opsmgr
